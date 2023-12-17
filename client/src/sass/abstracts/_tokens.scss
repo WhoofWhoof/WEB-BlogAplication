@@ -1,0 +1,215 @@
+@use "colors" as *;
+@use "typography" as *;
+@use "sizes" as *;
+
+$active-theme: $light;
+$enable-media-query-dark-mode: false;
+
+// Contextual
+$color-text-default: $color-neutral-1000;
+$color-background-default: $color-neutral-000;
+$color-text-interactive-default: $color-text-default;
+$color-text-interactive-hover: $color-primary-650;
+
+// set to 0 to disable
+$letter-spacing-loose: 0;
+
+$border-radius-1: $size-2;
+$border-radius-2: $size-4;
+
+$box-shadow-1: 0px 6px 5px rgb(0, 0, 0, 0.012),
+  0px 22px 18px rgb(0, 0, 0, 0.018), 0px 100px 80px rgb(0, 0, 0, 0.03);
+
+$box-shadow-2: 0px 6px 5px rgb(0, 0, 0, 0.016),
+  0px 22px 18px rgb(0, 0, 0, 0.024), 0px 100px 80px rgb(0, 0, 0, 0.04);
+
+$box-shadow-3: 0px 6px 5px rgb(0, 0, 0, 0.02), 0px 22px 18px rgb(0, 0, 0, 0.03),
+  0px 100px 80px rgb(0, 0, 0, 0.05);
+
+$box-shadow-4: 0px 6px 5px rgb(0, 0, 0, 0.03), 0px 22px 18px rgb(0, 0, 0, 0.042),
+  0px 100px 80px rgb(0, 0, 0, 0.07);
+
+$box-shadow-5: 0px 6px 5px rgb(0, 0, 0, 0.04), 0px 22px 18px rgb(0, 0, 0, 0.06),
+  0px 100px 80px rgb(0, 0, 0, 0.1);
+
+// body
+$body-font-family: $font-family-base;
+$body-font-size: $font-size-400;
+$body-line-height: 1.5;
+$body-font-weight: $font-weight-default;
+$body-text-color: $color-text-default;
+$body-background-color: $color-background-default;
+
+$link-color: $color-text-interactive-default;
+$link-color-hover: $color-text-interactive-hover;
+
+$heading-font-family: $font-family-base;
+$heading-color-default: $color-neutral-900;
+$heading-font-weight: $font-weight-bold;
+$heading-letter-spacing: $letter-spacing-loose;
+$heading-line-height: 1.1;
+$heading-text-transform: none;
+
+$heading-1-font-size: $font-size-1000;
+$heading-1-color: $heading-color-default;
+$heading-2-font-size: $font-size-900;
+$heading-2-color: $heading-color-default;
+$heading-3-font-size: $font-size-800;
+$heading-3-color: $heading-color-default;
+$heading-4-font-size: $font-size-700;
+$heading-4-color: $heading-color-default;
+
+// layout
+$grid-gap: $size-6;
+$flex-group-gap: $size-4;
+
+$hero-padding-block: clamp(15rem, 15vh, 20rem);
+$section-padding-block: clamp(5rem, 10vh, 6rem);
+
+$wrapper-min-margin-inline: $size-4;
+$wrapper-max-width: 64rem;
+$wrapper-max-width-narrow: 40rem;
+$wrapper-max-width-wide: 75rem;
+
+// site header
+$site-header-background-color-staging: $color-accent-500;
+$site-header-background-color-production: $color-neutral-000;
+$site-header-color: $color-neutral-900;
+$site-header-padding: $size-2 0;
+$site-header-margin: 0;
+$site-header-justification-small-screen: center;
+$site-header-justification-large-screen: space-between;
+$site-header-alignment: center;
+$site-header-logo-width: 8rem;
+$site-header-logo-height: 3rem;
+
+// top-info-bar
+$site-header-top-info-bar-background-color: $color-neutral-000;
+$site-header-top-info-bar-color-default: $color-neutral-1000;
+$site-header-top-info-bar-color-hover: $color-neutral-800;
+$site-header-top-info-bar-font-size: $font-size-200;
+$site-header-top-info-bar-justification-small-screen: center;
+$site-header-top-info-bar-alignment: center;
+$site-header-top-info-bar-justification-large-screen: end;
+$site-header-top-info-bar-padding: 0 $size-4;
+$site-header-top-info-bar-height: fit-content;
+
+
+//navigation
+$navigation-color: $site-header-color;
+$navigation-color-hover: $color-primary-300;
+$navigation-font-size: $font-size-400;
+$navigation-gap: $size-9;
+$navigation-link-text-decoration: none;
+$navigation-font-family: $body-font-family;
+$navigation-font-weight: $body-font-weight;
+
+// site footer
+$footer-background-color: $color-primary-300;
+$footer-text-color: $color-primary-900;
+$footer-link-color: $color-neutral-100;
+$footer-link-color-hover: $color-primary-200;
+$footer-link-font-family: $font-family-base;
+$footer-link-text-decoration: none;
+
+// buttons
+$button-font-family: $body-font-family;
+$button-font-size: $font-size-400;
+$button-font-weight: $font-weight-medium;
+$button-text-transform: uppercase;
+$button-padding: .75em 1.5em;
+$button-border: none;
+$button-border-radius: 100vw;
+$button-background-hover: $color-neutral-300;
+$button-outline-width: 2px;
+
+$button-primary-color: $color-neutral-000;
+$button-primary-background: $color-primary-650;
+$button-primary-color-hover: $color-neutral-000;
+$button-primary-background-hover: $color-primary-700;
+
+$button-primary-outline-text-color: $color-primary-650;
+$button-primary-outline-border-color: $color-primary-650;
+$button-primary-outline-background: transparent;
+$button-primary-outline-color-hover: $color-neutral-000;
+$button-primary-outline-background-hover: $color-primary-650;
+
+$button-accent-color: $color-neutral-000;
+$button-accent-background: $color-accent-450;
+$button-accent-color-hover: $color-accent-450;
+$button-accent-background-hover: $color-neutral-000;
+$button-accent-outline-width: 1px;
+$button-accent-outline-style: solid;
+$button-accent-outline-color: currentColor;
+
+$button-outline-color: $color-neutral-000;
+$button-outline-background: transparent;
+$button-outline-color-hover: $color-neutral-000;
+$button-outline-background-hover: $color-primary-650;
+$button-outline-padding: 0.5em 1em;
+$button-outline-border: 1px solid currentColor;
+
+$button-error-color: $color-neutral-000;
+$button-error-background: $color-error-500;
+$button-error-color-hover: $color-neutral-000;
+$button-error-background-hover: $color-error-600;
+
+$button-success-color: $color-neutral-000;
+$button-success-background: $color-success-580;
+$button-success-color-hover: $color-neutral-000;
+$button-success-background-hover: $color-success-600;
+
+$button-neutral-color: $color-neutral-000;
+$button-neutral-background: $color-neutral-1000;
+$button-neutral-color-hover: $color-neutral-000;
+$button-neutral-background-hover: $color-neutral-900;
+$button-neutral-padding: 0.5em 1em;
+
+$button-neutral-outline-text-color: $color-neutral-1000;
+$button-neutral-outline-border-color: $color-neutral-1000;
+$button-neutral-outline-background: transparent;
+$button-neutral-outline-color-hover: $color-neutral-000;
+$button-neutral-outline-background-hover: $color-neutral-1000;
+
+$button-primary-on-white-text-color: $color-primary-650;
+$button-primary-on-white-background: $color-neutral-000;
+$button-primary-on-white-color-hover: $color-neutral-000;
+$button-primary-on-white-background-hover: $color-primary-650;
+
+
+// cards
+$card-flow-spacing: $size-2;
+$card-padding: $size-6;
+$card-shadow: $box-shadow-1;
+$card-border-radius: $border-radius-2;
+$card-background-default: $color-neutral-000;
+$card-color-default: $body-text-color;
+$card-font-family: $body-font-family;
+$card-line-height: $body-line-height;
+$card-heading-color-default: $card-color-default;
+$card-heading-font-size: $font-size-600;
+
+// NOT USED. IF YOU WANNA USE IT, DECOMMENT THIS
+// AND ADD @forward "forms" in "_index.scss" in components folder
+// forms
+// $form-label-color: $body-text-color;
+// $form-label-font-family: $body-font-family;
+// $form-label-font-weight: $font-weight-bold;
+// $form-label-font-size: $body-font-size;
+
+// $form-input-color: $body-text-color;
+// $form-input-font-family: $body-font-family;
+// $form-input-font-weight: $font-weight-semi-bold;
+// $form-input-font-size: $body-font-size;
+// $form-input-background-color: $color-neutral-100;
+// $form-input-border-default: 3px solid $color-primary-200;
+// $form-input-border-focus: 3px solid $color-primary-400;
+// $form-input-padding: $size-3;
+// $form-input-border-radius: $border-radius-1;
+
+// $form-placeholder-color: $color-primary-300;
+// $form-placeholder-font-family: $form-input-font-family;
+// $form-placeholder-font-weight: $form-input-font-weight;
+// $form-placeholder-font-size: $body-font-size;
+
+// $form-group-spacing: 0.5rem;

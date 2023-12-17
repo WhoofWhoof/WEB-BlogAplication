@@ -1,0 +1,126 @@
+@use "../abstracts" as *;
+
+.button {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: $button-font-family;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+  padding: $button-padding;
+  border: $button-border;
+  border-radius: $button-border-radius;
+  transition: 275ms ease;
+  user-select: none;
+
+  &[data-type="primary"] {
+    background-color: $button-primary-background;
+    color: $button-primary-color;
+
+    &:is(:hover, :focus) {
+      background-color: $button-primary-background-hover;
+      color: $button-primary-color-hover;
+    }
+  }
+
+  &[data-type="primary-outline"] {
+    background-color: $button-primary-outline-background;
+    color: $button-primary-outline-text-color;
+    outline: $button-outline-width solid $button-primary-outline-border-color;
+    outline-offset: -2px;
+
+    &:is(:hover, :focus) {
+      background-color: $button-primary-background-hover;
+      color: $button-primary-color-hover;
+    }
+  }
+
+  &[data-type="accent"] {
+    background-color: $button-accent-background;
+    color: $button-accent-color;
+    outline: #{
+      $button-outline-width
+      $button-accent-outline-style
+      transparent
+    };
+    outline-offset: calc(#{$button-accent-outline-width} * -1);
+
+    &:is(:hover, :focus) {
+      background-color: $button-accent-background-hover;
+      color: $button-accent-color-hover;
+    }
+  }
+
+  &[data-type="outline"] {
+    background-color: $button-outline-background;
+    color: $button-outline-color;
+    border: $button-outline-border;
+
+    &:is(:hover, :focus) {
+      background-color: $button-outline-background-hover;
+      color: $button-outline-color-hover;
+    }
+  }
+
+  &[data-type="error"] {
+    background-color: $button-error-background;
+    color: $button-error-color;
+
+    &:is(:hover, :focus) {
+      background-color: $button-error-background-hover;
+      color: $button-error-color-hover;
+    }
+  }
+
+  &[data-type="success"] {
+    background-color: $button-success-background;
+    color: $button-success-color;
+
+    &:is(:hover, :focus) {
+      background-color: $button-success-background-hover;
+      color: $button-success-color-hover;
+    }
+  }
+
+  &[data-type="neutral"] {
+    background-color: $button-neutral-background;
+    color: $button-neutral-color;
+
+    &:is(:hover, :focus) {
+      background-color: $button-neutral-background-hover;
+      color: $button-neutral-color-hover;
+    }
+  }
+
+  &[data-type="neutral-outline"] {
+    background-color: $button-neutral-outline-background;
+    color: $button-neutral-outline-text-color;
+    outline: $button-outline-width solid $button-neutral-outline-border-color;
+    outline-offset: -2px;
+    border-radius: 100vw;
+
+    &:is(:hover, :focus) {
+      background-color: $button-neutral-background-hover;
+      color: $button-neutral-color-hover;
+    }
+  }
+
+  &[data-type="primary-on-white"] {
+    background-color: $button-primary-on-white-background;
+    color: $button-primary-on-white-text-color;
+
+    &:is(:hover, :focus) {
+      background-color: $button-primary-on-white-background-hover;
+      color: $button-primary-on-white-color-hover;
+    }
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
+}

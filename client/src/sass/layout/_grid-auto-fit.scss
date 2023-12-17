@@ -1,0 +1,12 @@
+@use "../abstracts/" as *;
+
+.grid-auto-fit {
+  display: grid;
+  column-gap: var(--grid-column-gap, $grid-gap);
+  row-gap: var(--grid-row-gap, $grid-gap);
+  grid-template-columns: repeat(auto-fit, minmax(min(var(--grid-item-min-width, 250px), var(--grid-item-max-width, 100%)), 1fr));
+
+  &.mx-auto {
+    justify-content: center;
+  }
+}

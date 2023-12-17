@@ -1,0 +1,62 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$my-primary: mat.define-palette(mat.$indigo-palette, 500);
+$my-accent: mat.define-palette(mat.$teal-palette);
+$my-warn: mat.define-palette(mat.$red-palette, A400, A100, A400);
+$my-typography: mat.define-typography-config();
+
+$my-theme: mat.define-light-theme((
+ color: (
+   primary: $my-primary,
+   accent: $my-accent,
+   warn: $my-warn
+ ),
+ density: 0,
+ typography: $my-typography
+));
+
+@include mat.typography-hierarchy($my-typography);
+
+// Emit styles for MatButton based on `$my-theme`. Because the configuration
+// passed to `define-light-theme` omits typography, `button-theme` will not
+// emit any typography styles.
+
+@include mat.core-theme($my-theme);
+@include mat.card-theme($my-theme);
+// @include mat.progress-bar-theme($my-theme);
+@include mat.tooltip-theme($my-theme);
+@include mat.form-field-theme($my-theme);
+@include mat.input-theme($my-theme);
+@include mat.select-theme($my-theme);
+@include mat.autocomplete-theme($my-theme);
+@include mat.dialog-theme($my-theme);
+@include mat.chips-theme($my-theme);
+@include mat.slide-toggle-theme($my-theme);
+@include mat.radio-theme($my-theme);
+@include mat.slider-theme($my-theme);
+@include mat.menu-theme($my-theme);
+@include mat.list-theme($my-theme);
+@include mat.paginator-theme($my-theme);
+@include mat.tabs-theme($my-theme);
+@include mat.checkbox-theme($my-theme);
+@include mat.button-theme($my-theme);
+@include mat.icon-button-theme($my-theme);
+@include mat.fab-theme($my-theme);
+@include mat.snack-bar-theme($my-theme);
+@include mat.table-theme($my-theme);
+// @include mat.progress-spinner-theme($my-theme);
+@include mat.badge-theme($my-theme);
+// @include mat.bottom-sheet-theme($my-theme);
+@include mat.button-toggle-theme($my-theme);
+@include mat.datepicker-theme($my-theme);
+@include mat.divider-theme($my-theme);
+@include mat.expansion-theme($my-theme);
+// @include mat.grid-list-theme($my-theme);
+@include mat.icon-theme($my-theme);
+@include mat.sidenav-theme($my-theme);
+@include mat.stepper-theme($my-theme);
+@include mat.sort-theme($my-theme);
+@include mat.toolbar-theme($my-theme);
+// @include tree-theme($my-theme);

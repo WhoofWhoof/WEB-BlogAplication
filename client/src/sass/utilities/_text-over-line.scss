@@ -1,0 +1,8 @@
+@use "../abstracts/" as *;
+
+.text-over-line {
+  max-width: max-content;
+  background-color: white;
+  transform: translateY(-50%);
+  padding-inline: $size-2;
+}

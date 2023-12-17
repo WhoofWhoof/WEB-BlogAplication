@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="img"></div>
+    
+    <div class="middle-container">
+        <div class="sign-up-container">
+            <h2 class="sign-in-text"> Sign In</h2>
+            <form [formGroup]="form">
+
+            <mat-form-field class="forms" appearance="outline">
+                <mat-label>Username</mat-label>
+                <input matInput placeholder="John Doe" type="text" formControlName="username">
+                <mat-error *ngIf="form.get('username')?.hasError('required')">
+                </mat-error>   
+            </mat-form-field>
+
+            <mat-form-field class="forms" appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password">
+                <mat-error *ngIf="form.get('password')?.hasError('required')">
+                </mat-error>
+            </mat-form-field>
+        </form>
+
+            <mat-checkbox [disableRipple]="true">
+                <p class="checkbox-text">
+                    Stay signed in
+                </p>
+            </mat-checkbox>
+
+            <button class="btn-sign-in " 
+                [disabled]="!form.valid || disableButton === true" 
+                (click)="signIn()">
+                <mat-icon svgIcon="right-arrow">
+                </mat-icon>
+            </button>
+
+            <div class="links">
+                <a class="link"
+                    [routerLink]="['/login/support']">
+                    CAN'T SIGN IN?
+                </a>
+
+                <a class="link"
+                    [routerLink]="['/sign-up']">
+                    CREATE ACCOUNT
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

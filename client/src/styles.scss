@@ -1,0 +1,202 @@
+@use "sass/abstracts" as *;
+@use './fonts.scss';
+@use './theme.scss';
+@use '_variables';
+@import '@angular/cdk/overlay-prebuilt.css';
+
+.mat-step-header:hover {
+  background-color: var(--mat-stepper-header-hover-state-layer-color) !important;
+  cursor: pointer !important;
+}
+
+.mdc-button {
+  --mdc-typography-button-letter-spacing: 0;
+  min-width: revert !important;
+
+  &__label {
+    display: inline-flex;
+    align-items: center;
+    column-gap: var(--button-flex-column-gap, $size-2);
+    row-gap: var(--button-flex-row-gap, $size-2);
+
+    mat-icon {
+      vertical-align: middle;
+    }
+  }
+}
+
+.mat-mdc-select-arrow svg {
+  max-width: revert;
+}
+
+.mdc-tab {
+  flex: revert !important;
+  letter-spacing: 0 !important;
+}
+
+.mat-drawer-container {
+  --mat-sidenav-content-background-color: white !important;
+}
+
+.mat-mdc-slide-toggle {
+  --mdc-switch-selected-focus-state-layer-color: #{$color-primary-650} !important;
+  --mdc-switch-selected-handle-color: #{$color-primary-650} !important;
+  --mdc-switch-selected-hover-state-layer-color: #{$color-primary-650} !important;
+  --mdc-switch-selected-pressed-state-layer-color: #{$color-primary-650} !important;
+  --mdc-switch-selected-focus-handle-color: #{$color-primary-800} !important;
+  --mdc-switch-selected-hover-handle-color: #{$color-primary-800} !important;
+  --mdc-switch-selected-pressed-handle-color: #{$color-primary-800} !important;
+  --mdc-switch-selected-focus-track-color: #{$color-primary-400} !important;
+  --mdc-switch-selected-hover-track-color: #{$color-primary-400} !important;
+  --mdc-switch-selected-pressed-track-color: #{$color-primary-400} !important;
+  --mdc-switch-selected-track-color: #{$color-primary-400} !important;
+}
+
+.mat-mdc-checkbox {
+  --mdc-checkbox-disabled-selected-icon-color: rgba(0, 0, 0, 0.38);
+  --mdc-checkbox-disabled-unselected-icon-color: rgba(0, 0, 0, 0.38);
+  --mdc-checkbox-selected-checkmark-color: #fff;
+  --mdc-checkbox-selected-focus-icon-color: #{$color-primary-650};
+  --mdc-checkbox-selected-hover-icon-color: #{$color-primary-650};
+  --mdc-checkbox-selected-icon-color: #{$color-primary-650};
+  --mdc-checkbox-selected-pressed-icon-color: #{$color-primary-650};
+  --mdc-checkbox-unselected-focus-icon-color: #212121;
+  --mdc-checkbox-unselected-hover-icon-color: #212121;
+  --mdc-checkbox-unselected-icon-color: rgba(0, 0, 0, 0.54);
+  --mdc-checkbox-unselected-pressed-icon-color: rgba(0, 0, 0, 0.54);
+  --mdc-checkbox-selected-focus-state-layer-color: #{$color-primary-650};
+  --mdc-checkbox-selected-hover-state-layer-color: #{$color-primary-650};
+  --mdc-checkbox-selected-pressed-state-layer-color: #{$color-primary-650};
+  --mdc-checkbox-unselected-focus-state-layer-color: black;
+  --mdc-checkbox-unselected-hover-state-layer-color: black;
+  --mdc-checkbox-unselected-pressed-state-layer-color: black;
+}
+
+.mat-mdc-radio-button {
+  --mdc-radio-selected-focus-icon-color: #{$color-primary-650} !important;
+  --mdc-radio-selected-hover-icon-color: #{$color-primary-650} !important;
+  --mdc-radio-selected-icon-color: #{$color-primary-650} !important;
+  --mdc-radio-selected-pressed-icon-color: #{$color-primary-650} !important;
+  --mat-radio-checked-ripple-color: #{$color-primary-650} !important;
+}
+
+.mat-step-header {
+  --mat-stepper-header-selected-state-icon-background-color: #{$color-primary-650};
+  --mat-stepper-header-done-state-icon-background-color: #{$color-primary-650};
+  --mat-stepper-header-edit-state-icon-background-color: #{$color-primary-650};
+}
+
+.mat-mdc-form-field-error-wrapper {
+  position: static !important;
+}
+
+.mat-mdc-form-field-hint-wrapper {
+  position: static !important;
+}
+
+.mat-mdc-form-field-subscript-wrapper {
+  margin: 2px 0 $size-2 !important;
+
+  .mat-mdc-form-field-error-wrapper {
+    padding: 0 !important;
+  }
+
+  .mat-mdc-form-field-hint-wrapper {
+    padding: 0 !important;
+  }
+}
+
+.mat-mdc-form-field-bottom-align {
+  &::before {
+    display: none !important;
+  }
+}
+
+// .mat-form-field {
+//   .mat-form-field-wrapper {
+//     padding-bottom: 0;
+
+//     .mat-form-field-underline {
+//       position: initial !important;
+//       display: block;
+//       margin-top: -1px;
+//     }
+
+//     .mat-form-field-subscript-wrapper,
+//     .mat-form-field-ripple {
+//       position: initial !important;
+//       display: table;
+//     }
+
+//     .mat-form-field-subscript-wrapper {
+//       min-height: calc(1em + 1px);
+//     }
+//   }
+// }
+
+// .mat-button-focus-overlay {
+//   background-color: transparent !important;
+// }
+
+// .mat-drawer-container {
+//   background-color: #ffffff;
+// }
+
+// html {
+//   overflow-x: hidden;
+// }
+
+// .custom-dialog-container .mat-dialog-container {
+//   padding: 0px;
+// }
+
+.no-border-radius-mini-dialog-container.custom-dialog-container .mat-dialog-container {
+  @media (max-width: 1100px) {
+    border-radius: 0px;
+  }
+}
+
+.no-border-radius-mini-dialog-container .mat-dialog-container {
+  @media (max-width: 1100px) {
+    border-radius: 0px;
+  }
+}
+
+.custom-icon {
+  background-color: transparent;
+  border: none;
+}
+
+.leaflet-bottom.leaflet-right {
+  display: none;
+}
+
+.leaflet-control-zoom {
+  border: 2px solid #3f51b590 !important;
+  border-radius: 5px !important;
+}
+
+.leaflet-control-zoom-in {
+  color: #3f51b590 !important;
+}
+
+.leaflet-control-zoom-out {
+  color: #3f51b590 !important;
+}
+
+.dialog-track-order-status-dialog {
+  min-height: 55vh;
+  max-width: 1200px;
+  max-height: calc(100vh - 65px);
+  width: 1200px;
+  top: 70px;
+}
+
+@media (max-width: 1100px) {
+  .leaflet-control-zoom {
+    display: none;
+  }
+}
+
+// // Using the $theme variable from the pre-built theme you can call the theming function
+// @include candy-carousel-theme($theme);

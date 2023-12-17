@@ -1,0 +1,45 @@
+@use "../abstracts/" as *;
+
+.flex-group {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: var(--flex-column-gap, $flex-group-gap);
+  row-gap: var(--flex-row-gap, calc($flex-group-gap / 2));
+  width: fit-content;
+
+  @if var(--flex-item-min-width) != null {
+    & > * {
+      min-width: min(var(--flex-item-min-width), 100%);
+    }
+  }
+
+  @if var(--flex-item-max-width) != null {
+    & > * {
+      max-width: var(--flex-item-max-width);
+    }
+  }
+
+  &.inline {
+    display: inline-flex;
+  }
+}
+
+.flex-group.horizontally-centered {
+  justify-content: center;
+}
+
+.flex-group.space-between {
+  justify-content: space-between;
+}
+
+.flex-group.vertically-centered {
+  align-items: center;
+}
+
+.flex-group.vertically-end {
+  align-items: flex-end;
+}
+
+.flex-group.no-wrap {
+  flex-wrap: nowrap;
+}

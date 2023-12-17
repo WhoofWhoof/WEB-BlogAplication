@@ -1,0 +1,9 @@
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  &.vertically-centered {
+    align-items: center;
+  }
+}

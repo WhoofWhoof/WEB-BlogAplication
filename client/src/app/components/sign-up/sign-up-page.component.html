@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="img"></div>
+    
+    <div class="middle-container">
+        <div class="sign-up-container">
+            <h2 class="sign-in-text"> Sign Up</h2>
+            <form [formGroup]="form">
+
+            <mat-form-field class="forms" appearance="outline">
+                <mat-label>Username</mat-label>
+                <input matInput placeholder="John Doe" type="text" formControlName="username">
+                <mat-error *ngIf="form.get('username')?.hasError('required')">
+                </mat-error>   
+            </mat-form-field>
+
+            <mat-form-field class="forms" appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password">
+                <mat-error *ngIf="form.get('password')?.hasError('required')">
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="forms" appearance="outline">
+                <mat-label>Confirm Password</mat-label>
+                <input matInput type="password" formControlName="confirmPassword">
+                <mat-error *ngIf="form.get('confirmPassword')?.hasError('required')">
+                </mat-error>
+                <mat-error *ngIf="form.get('confirmPassword')?.hasError('pattern')">
+                    Passwords must match
+                </mat-error>
+            </mat-form-field>
+
+        </form>
+
+            <mat-checkbox [disableRipple]="true">
+                <p class="checkbox-text">
+                    Stay signed in
+                </p>
+            </mat-checkbox>
+
+            <button class="btn-sign-in" 
+                [disabled]="!form.valid || disableButton === true" 
+                (click)="signUp()">
+                <mat-icon svgIcon="right-arrow">
+                </mat-icon>
+            </button>
+        </div>
+    </div>
+</div>

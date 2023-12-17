@@ -1,0 +1,42 @@
+@import './angular-material-theme';
+
+// Import all the tools needed to customize the theme and extract parts of it
+
+
+$screen-sm-min: 768px;
+$screen-xs-max: ($screen-sm-min - 1);
+$screen-md-min: 992px;
+$screen-sm-max: ($screen-md-min - 1);
+$screen-lg-min: 1200px;
+$screen-md-max: ($screen-lg-min - 1);
+
+.mat-checkbox-layout { white-space: normal !important; }
+
+// // Include all theme styles for the components.
+// @include internal-angular-material-theme($theme);
+
+// $background: map-get($theme, background);
+
+// add hover for mat-icon butttons
+// .mat-button:hover, .mat-stroked-button:hover {
+//    background-color: mat-color($background, hover);
+//  }
+
+.mat-button-toggle-label-content {
+  line-height: 34px !important;
+}
+
+.error-snack-bar {
+  --mdc-snackbar-container-color: #e74c3c !important;
+  background: #e74c3c !important;
+}
+
+.success-snack-bar {
+  --mdc-snackbar-container-color: #27ae60 !important;
+  background: #27ae60 !important;
+}
+
+.margin-top-snack-bar {
+  margin-top: 30vh !important;
+  // top: 0 !important;
+}

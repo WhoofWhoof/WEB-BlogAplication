@@ -1,0 +1,16 @@
+@use "../abstracts/" as *;
+
+.even-columns {
+  display: grid;
+  column-gap: var(--grid-column-gap, $grid-gap);
+  row-gap: var(--grid-row-gap, $grid-gap);
+
+  @include mq(medium) {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+
+  &.vertically-centered {
+    align-items: center;
+  }
+}
