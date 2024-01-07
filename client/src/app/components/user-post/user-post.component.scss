@@ -1,0 +1,36 @@
+@use "../../../sass/abstracts" as *;
+@use "../../../sass/components/buttons" as *;
+
+.wrapper {
+  margin-top: 40px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  padding: 20px;
+  border-radius: 20px;
+  // height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 20px;
+  text-align: center;
+}
+
+.post-container {
+  // display: flow-root;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  //center
+  justify-items: center;
+  gap: 20px;
+  // position: relative;
+
+  // // app-post-card-component {
+  // //   overflow: hidden;
+  // // }
+
+  // // .btn-delete {
+  // //   position: absolute;
+  // //   top: 0;
+  // //   right: 0;
+  // //   z-index: 2;
+  // // }
+
+}

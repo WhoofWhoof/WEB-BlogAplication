@@ -1,0 +1,36 @@
+<div class="[ wrapper ]" data-type="medium">
+
+    <h1 class="heading-1">
+        Your posts
+    </h1>
+    <app-spinner
+        *ngIf="fetchingPosts"
+        [center]="true"
+        message="Loading posts..."
+        borderWidth="15px"
+        size="100px"
+        color="#eeccff"
+    ></app-spinner>
+
+    <ng-container *ngIf="!checkIfPostsExist()">
+        <p class="paragraph">
+            You have no posts yet. Create one!
+        </p>
+        <button
+            class="button"
+            data-type="primary"
+            mat-raised-button
+            routerLink="/new-post"
+        >
+            Create a new post
+        </button>
+    </ng-container>
+    <div class="post-container">
+    <ng-container *ngFor="let post of posts">
+        <app-post-card-component id="post-card-component"
+            (deletePostEvent)="fetchData()"
+            [delete]="true"
+            [post]="post"
+        ></app-post-card-component>
+    </ng-container>
+</div>

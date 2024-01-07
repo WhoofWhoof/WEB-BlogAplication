@@ -17,7 +17,6 @@
   "files": [
     "src/main.ts"
   ],
-  "@server/*": ["../../server/*"],
   "include": [
     "src/**/*.d.ts"
   ]

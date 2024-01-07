@@ -1,0 +1,43 @@
+@use "sass/abstracts" as *;
+
+.hero {
+  margin-top: 40px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+
+  .offer {
+    grid-area: 1 / 1 / -1 / -1;
+    background-color: rgba(white, 0.7);
+    padding: $size-4;
+    p {
+      text-align: center;
+    }
+  }
+
+  .logo {
+    zoom: 15;
+    color: $color-primary-650;
+  }
+  margin-bottom: $size-4;
+}
+
+.blog-post {
+  // position: relative;
+  // overflow: hidden;
+  text-align: center;
+  a {
+    margin-top: $size-4;
+  }
+
+  .post-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: $size-4;
+    margin-top: $size-4;
+    // align center 
+    justify-items: center;
+    // max 4 cards per row
+    max-width: 1200px;
+  }
+}

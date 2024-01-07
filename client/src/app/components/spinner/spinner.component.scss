@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  .spinner {
+    border: solid #f3f3f3;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top: solid;
+    border-bottom: solid;
+    border-radius: 50%;
+    background-color: transparent;
+    animation: spin 1.25s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  p {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 40px;
+  }
+}

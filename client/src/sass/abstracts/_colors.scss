@@ -10,16 +10,16 @@ $-clr-gray-700: hsl(0 0% 30%);
 $-clr-gray-800: hsl(0 0% 17.5%);
 $-clr-gray-900: hsl(0 0% 7.5%);
 $-clr-black: hsl(0 0% 0%);
-$-clr-blue-100: hsl(215, 99%, 90%);
-$-clr-blue-200: hsl(215, 99%, 80%);
-$-clr-blue-300: hsl(215, 99%, 70%);
-$-clr-blue-400: hsl(215, 99%, 60%);
-$-clr-blue-500: hsl(215, 99%, 50%);
-$-clr-blue-600: hsl(215, 99%, 40%);
-$-clr-blue-650: hsl(215, 99%, 34%);
-$-clr-blue-700: hsl(215, 99%, 30%);
-$-clr-blue-800: hsl(215, 99%, 20%);
-$-clr-blue-900: hsl(215, 99%, 10%);
+$-clr-pink-100: hsl(280, 99%, 90%);
+$-clr-pink-200: hsl(280, 99%, 80%);
+$-clr-pink-300: hsl(280, 99%, 70%);
+$-clr-pink-400: hsl(280, 99%, 60%);
+$-clr-pink-500: hsl(280, 99%, 50%);
+$-clr-pink-600: hsl(280, 99%, 40%);
+$-clr-pink-650: hsl(280, 99%, 34%);
+$-clr-pink-700: hsl(280, 99%, 30%);
+$-clr-pink-800: hsl(280, 99%, 20%);
+$-clr-pink-900: hsl(280, 99%, 10%);
 $-clr-red-100: hsl(6, 78%, 90%);
 $-clr-red-200: hsl(6, 78%, 80%);
 $-clr-red-300: hsl(6, 78%, 70%);
@@ -88,16 +88,16 @@ $light: (
     "900": $-clr-red-900,
   ),
   "primary": (
-    "100": $-clr-blue-100,
-    "200": $-clr-blue-200,
-    "300": $-clr-blue-300,
-    "400": $-clr-blue-400,
-    "500": $-clr-blue-500,
-    "600": $-clr-blue-600,
-    "650": $-clr-blue-650,
-    "700": $-clr-blue-700,
-    "800": $-clr-blue-800,
-    "900": $-clr-blue-900,
+    "100": $-clr-pink-100,
+    "200": $-clr-pink-200,
+    "300": $-clr-pink-300,
+    "400": $-clr-pink-400,
+    "500": $-clr-pink-500,
+    "600": $-clr-pink-600,
+    "650": $-clr-pink-650,
+    "700": $-clr-pink-700,
+    "800": $-clr-pink-800,
+    "900": $-clr-pink-900,
   ),
   "success": (
     "100": $-clr-success-100,
@@ -167,16 +167,16 @@ $dark: (
     "100": $-clr-red-900,
   ),
   "primary": (
-    "100": $-clr-blue-100,
-    "200": $-clr-blue-200,
-    "300": $-clr-blue-300,
-    "400": $-clr-blue-400,
-    "500": $-clr-blue-500,
-    "600": $-clr-blue-600,
-    "650": $-clr-blue-650,
-    "700": $-clr-blue-700,
-    "800": $-clr-blue-800,
-    "900": $-clr-blue-900,
+    "100": $-clr-pink-100,
+    "200": $-clr-pink-200,
+    "300": $-clr-pink-300,
+    "400": $-clr-pink-400,
+    "500": $-clr-pink-500,
+    "600": $-clr-pink-600,
+    "650": $-clr-pink-650,
+    "700": $-clr-pink-700,
+    "800": $-clr-pink-800,
+    "900": $-clr-pink-900,
   ),
   "success": (
     "900": $-clr-success-100,

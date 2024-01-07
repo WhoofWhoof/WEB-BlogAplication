@@ -1,0 +1,14 @@
+@use "../../../../sass/abstracts" as *;
+@use "../../../../sass/components/buttons" as *;
+
+.example-element-detail {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  overflow: hidden;
+  padding: 16px;
+}
+
+.example-detail-row {
+  height: 0;
+}

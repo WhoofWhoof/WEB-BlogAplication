@@ -1,0 +1,92 @@
+<header
+  watchHeightChangeOnWindowResize
+  class="site-header"
+  (heightChanged)="headerHeightChanged(+$event)"
+>
+  <div class="site-header__inner">
+    <div class="wrapper" data-type="wide">
+      <div class="site-header__inner-content"
+      [ngClass]="{
+        'hidden': elevate
+      }">
+        <mat-icon
+          class="[ logo ] [ cursor-pointer ]"
+          svgIcon="logo"
+          (click)="navigateTo('/')"
+        ></mat-icon>
+
+        <nav class="primary-navigation">
+          <ul class="[ nav ] [ flex-group vertically-centered no-wrap ]">
+            <a
+            mat-button
+            routerLink="./new-post"
+            >
+                Create a new post
+            </a>
+            <a
+              *ngIf="isLogged"
+              mat-button
+              routerLink="./user/posts"
+            >
+              Your Posts
+            </a>
+
+            <a
+              *ngIf="isLogged && isAdmin"
+              mat-button
+              routerLink="./admin/users"
+            >
+              Admin
+            </a>
+
+          </ul>
+        </nav>
+        <div
+          *ngIf="!isLogged"
+          class="[ actions ] [ flex-group vertically-centered ]"
+        >
+          <a
+            class="[ button ] [ fs-300 ]"
+            data-type="neutral-outline"
+            (click)="navigateTo('/login')"
+          >
+            Login
+          </a>
+          <a
+            class="[ button ] [ fs-300 ]"
+            data-type="primary-outline"
+            (click)="navigateTo('/sign-up')"
+          >
+            Sign-up
+          </a>
+        </div>
+
+        <!-- Only shows when the user is logged -->
+        <div
+          [ngClass]="{
+            'cdk-visually-hidden': !isLogged
+          }"
+          class="[ user-data ] [ flex-group vertically-centered no-wrap ]"
+        >
+        <div>
+          <p class="fw-medium text-center">
+            {{ userData?.email }}
+          </p>
+          <div #accountData>
+
+          </div>
+        </div>
+        <mat-icon
+            svgIcon="profile"
+            class="mx-auto clr-primary-650 cursor-pointer"
+            [matMenuTriggerFor]="userMenu"
+        ></mat-icon>
+      <mat-menu #userMenu="matMenu">
+        <button mat-menu-item routerLink="/user/posts">Utilizator</button>
+        <button mat-menu-item (click)="logout()">Deconectare</button>
+      </mat-menu>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

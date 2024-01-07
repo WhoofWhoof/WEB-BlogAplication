@@ -1,7 +1,7 @@
 import { ModuleWithProviders } from "@angular/core";
-import { LoginModule } from "../login/login.module";
 import { RouterModule, Routes } from "@angular/router";
 import { SignUpPageComponent } from "../../components/sign-up/sign-up-page.component";
+import { SignUpModule } from "./sign-up.module";
 
 const routes: Routes = [
     {
@@ -10,5 +10,5 @@ const routes: Routes = [
     },
 ];
 
-export const routing: ModuleWithProviders<LoginModule> = 
+export const routing: ModuleWithProviders<SignUpModule> = 
     RouterModule.forChild(routes);

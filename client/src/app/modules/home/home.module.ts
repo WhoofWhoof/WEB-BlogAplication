@@ -12,7 +12,8 @@ import { MatMenuModule } from "@angular/material/menu";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
-
+import { SpinnerModule } from "../spinner/spinner.module";
+import { PostCardModule } from "../post-card/post-card.module";
 @NgModule({
     providers: [],
     imports: [
@@ -32,6 +33,7 @@ import { MatInputModule } from "@angular/material/input";
       ReactiveFormsModule,
       MatInputModule,
       FormsModule,
+      PostCardModule,
     ],
     declarations: [
       HomeComponent,

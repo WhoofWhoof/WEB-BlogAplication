@@ -1,14 +1,18 @@
 import { NgModule } from "@angular/core";
-import { PermissionDirective } from "src/app/directives/permission.directive";
+import { PermissionDirective } from "@directives/permission.directive";
+import { SpinnerModule } from "../spinner/spinner.module";
 
 @NgModule({
     providers: [],
-    imports: [],
+    imports: [
+        SpinnerModule
+    ],
     declarations: [
         PermissionDirective
     ],
     exports: [
-        PermissionDirective
+        PermissionDirective,
+        SpinnerModule
     ]
 })
 

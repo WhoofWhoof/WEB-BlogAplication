@@ -1,0 +1,117 @@
+@use "sass/abstracts" as *;
+
+.card {
+  display: grid;
+  max-height: 500px;
+  min-height: auto;
+  min-width: auto;
+  max-width: 250px;
+  width: 250px;
+  grid-template-rows: 1fr auto;
+  box-sizing: content-box;
+  //shadow
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+  mat-divider {
+    --mat-divider-width: 2px;
+    color: black;
+    border-top-color: (black, 0.5);
+  }
+
+  &__username {
+    display: flex;
+    align-items: center;
+    gap: $size-4;
+    padding: $size-1;
+    font-size: $size-4;
+    font-weight: 600;
+    color: $color-primary-650;
+    .btn-delete {
+      padding: 0px 8px;
+      margin-left: auto;
+      align-self: flex-end;
+    }
+  }
+  &__image {
+    height: 300px;
+    width: 200px;
+    text-align: center;
+    max-width: 200px;
+    max-height: 300px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    p {
+      //center text vertically
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+  }
+
+  &__content {
+    // padding: $size-4;
+    display: inline-block;
+    gap: $size-2;
+    text-align: start;
+    word-break: break-word;
+    // white-space:nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    p {
+      width:100%;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+  }
+
+    h1 {
+      font-size: $size-4;
+      font-weight: 600;
+      color: $color-primary-650;
+    }
+  }
+
+  &__actions {
+    box-sizing: content-box;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: $size-4;
+
+    .like {
+      fill: white;
+      mat-icon {
+        transition: fill 0.5s;
+        transition: transform 0.2s;
+        fill: black;
+        // grow in size a little
+      }
+      &.liked {
+        mat-icon {
+          fill: red;
+          transform: scale(1);
+        }
+      }
+      &:hover {
+        mat-icon {
+          stroke: none;
+          transition: fill 0.5s;
+          transition: transform 0.2s;
+          fill: red;
+          transform: scale(1.2);
+        }
+        fill: red;
+
+      }
+    }
+  }
+}

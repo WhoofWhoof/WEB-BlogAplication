@@ -1,0 +1,93 @@
+<section class="hero">
+  <div class="[ wrapper ] [ even-columns vertically-centered ]" data-type="medium">
+		<div class="[ image-container ] [ mx-auto ]">
+		<mat-icon
+			class="[ logo ] [ cursor-pointer ] color-primary-650"
+			svgIcon="logo"
+			(click)="navigateTo('/')"
+			></mat-icon>
+		</div>
+		<div
+      class="[ offer ] [ flow ]"
+      style="
+        --flow-spacer: 2rem;
+      "
+    >
+		<h1 class="heading-1 clr-primary-650">
+			Blogging Online
+		</h1>
+		<h2 class="heading-1 clr-primary-650">
+			Share your thoughts with the world, and connect with like-minded people. Join the community today!
+		</h2>
+		<a *ngIf="!isLogged"
+			class="[ button ] [ fs-300 ]"
+			data-type="primary-outline"
+			(click)="navigateTo('/sign-up')"
+		>
+			Create an account
+		</a>
+		<a *ngIf="isLogged"
+			class="[ button ] [ fs-300 ]"
+			data-type="primary-outline"
+			(click)="navigateTo('/new-post')"
+		>
+			Create a new post
+		</a>
+		</div>
+	</div>
+</section>
+
+<section class="blog-post bg-primary-650 padding-block-8">
+	<div class="[ wrapper ] [even-columns vertically-centered]" data-type="medium">
+		<!-- one div for blogs of today -->
+		<app-spinner *ngIf="fetchingPosts"
+		[center]="true"
+		message="Loading posts..."
+		borderWidth="15px"
+		size="100px"
+		color="#eeccff"
+		>
+		</app-spinner>
+
+		<ng-container *ngIf="posts.length; else noPosts">
+			<h1 class="heading-1 clr-primary-100">
+				What's new today?
+			</h1>
+			<br>
+			<div class="post-card-container">
+				<ng-container *ngFor="let data of posts">
+				<app-post-card-component
+					[post]="data"
+				></app-post-card-component>
+				</ng-container>
+			</div>
+			<br><br>
+			<h1 class="heading-1 clr-primary-100">
+				Create your own post!
+			</h1>
+			<br>
+			<a
+				class="[ button ] [ fs-300 ]"
+				data-type="neutral"
+				(click)="navigateTo('/new-post')"
+				>
+				Post a new blog
+			</a>
+		</ng-container>
+
+		<ng-template #noPosts>
+			<ng-container *ngIf="!fetchingPosts">
+			<h1 class="heading-1 clr-primary-100">
+				No posts yet. Be the first to post!
+			</h1>
+			<a
+				class="[ button ] [ fs-300 ]"
+				data-type="neutral"
+				(click)="navigateTo('/new-post')"
+			>
+				Post a new blog
+			</a>
+			</ng-container>
+		</ng-template>
+	</div>
+</section>

@@ -1,0 +1,59 @@
+.container {
+  padding: 10px;
+}
+
+.close {
+  border-color: #e74c3c;
+  color: #e74c3c;
+}
+
+.accept {
+  border-color: green;
+  color: green;
+}
+
+button {
+  margin-left: 10px
+}
+
+.accept-delayed {
+  $animation-duration: 3s;
+  background: linear-gradient(to left, white 50%, green 50%);
+  background-size: 200% 100%;
+  background-position: right;
+  color: gray;
+  opacity: 0.5;
+  animation: 
+    background-right $animation-duration ease-in-out,
+    text-slide $animation-duration ease-in-out;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-around;
+}
+.enabled {
+  border-color: green;
+  background-position: left;
+  color: white;
+  opacity: 1;
+}
+
+@keyframes text-slide {
+  0% {
+    color: gray;
+  }
+  100% {
+    color: white;
+  }
+}
+
+@keyframes background-right {
+  0% {
+    background-position: right;
+
+  }
+  100% {
+    background-position: left;
+  }
+}

@@ -1,96 +1,82 @@
-.container {
-    min-width: 100vh;
-    min-height: 100vh;
-    display: grid;
-    justify-content: center;
-    align-items: center;
-}
+@use "sass/abstracts" as *;
 
 .img {
-    background-repeat: no-repeat; 
-    background-size: cover;
-    background-image: url("../../../assets/backgrounds/login-background.jpg");
-    background-position: center;
-    //blur only the background
-    filter: blur(2px);
-    background-color: rgba(0, 0, 0, 0.3);
-    background-blend-mode: darken;
-    position: absolute;
-    z-index: -10;
-    width: 100%;
-    height: 100%;
+	height: 100%;
+  width: 100%;
+  background: url('../../../assets/backgrounds/login-background.jpg') no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: absolute;
+  z-index: -1;
 }
 
 .checkbox-text {
     font-size: 12px;
 }
-.forms {
-    mat-label, input {
-        font-family: "Khand-Bold";
-    }
-    // font-size: 12px;
+.section {
+	padding-bottom: 0px;
 }
 
-.middle-container {
-    background-color: white;
-    width: 500px;
-    height: 700px;
+.card {
+	// margin-top: 40px;
+	display: grid;
+  max-width: 500px;
 
-    .sign-up-container {  
-        display: grid;
-        padding: 0 50px;
-        margin-top: 70px;
-        form {
-            display: grid;;
-        }
-        .sign-in-text {
-            text-align: center;
-            font-size: 40px;
-        }
-        .btn-sign-in {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 85px;
-            aspect-ratio: 1;
-            margin-top: 130px;
-            margin-bottom: 20px;
-            position: relative;
-            left: 50%;
-            transform: translateX(-50%);
-        
-            background-color: red;
-            transition: background-color 1s;
-            border: 2px solid #f0f0f0;
-            border-radius: 30px;
-            mat-icon {
-                zoom: 3;
-                color: white;
-            }
-            
-            &[disabled] {
-                background-color: transparent;
-                transition: background-color 0.5s;
-                border: 2px solid #d9d9d9;
-                mat-icon {
-                    color: #d9d9d9;
-                }
-            }
-        }
-        .links {
-            margin-top: 20px;
-            display: grid;
-            font-size: 12px;
-            text-align: center;
-            justify-content: center;
-            a {
-                font-family: "Khand-Bold";
+	&__content {
+    form {
+      display: grid;
 
-                text-decoration: none;
-                color: #c1c1c1;
-                margin-bottom: 5px;
-            }
-        }
-    }
+			.btn-sign-in {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 85px;
+				aspect-ratio: 1;
+				margin-top: 130px;
+				margin-bottom: 20px;
+				position: relative;
+				left: 50%;
+				transform: translateX(-50%);
+		
+				background-color: $color-primary-400;
+				transition: background-color 1s;
+				border: 2px solid #f0f0f0;
+				border-radius: 30px;
+				mat-icon {
+						zoom: 3;
+						color: white;
+				}
+				
+				&[disabled] {
+						background-color: transparent;
+						transition: background-color 0.5s;
+						border: 2px solid #d9d9d9;
+						mat-icon {
+								color: #d9d9d9;
+						}
+					}
+				}
+			}
+
+			.links {
+				margin-top: 20px;
+				display: grid;
+				font-size: 12px;
+				text-align: center;
+				justify-content: center;
+				a {
+						text-decoration: none;
+						color: #c1c1c1;
+						margin-bottom: 5px;
+				}
+		}
+	}
+
+	&__actions {
+    display: grid;
+    gap: $size-4;
+	}
 }
 

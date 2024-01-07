@@ -1,0 +1,22 @@
+<div
+  class="container mat-typography"
+  [ngStyle]="{
+    'align-items': center ? 'center' : 'initial'
+  }"
+>
+  <div
+    class="spinner"
+    [ngStyle]="{
+      'height': size,
+      'width': size,
+      'border-width': borderWidth,
+      'border-top-color': color,
+      'border-bottom-color': color
+    }"
+  ></div>
+  <p
+    [ngStyle]="{
+      'color': color
+    }"
+    *ngIf="message.length > 0">{{ message }}</p>
+</div>

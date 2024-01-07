@@ -1,0 +1,235 @@
+@use "../../../sass/abstracts" as *;
+
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  border-bottom: 1px solid $color-neutral-200;
+  isolation: isolate;
+  background-color: white;
+
+  &__inner {
+    color: $site-header-color;
+    padding: $site-header-padding;
+    display: grid;
+    gap: $size-4;
+    align-items: $site-header-alignment;
+    // justify-content: $site-header-justification-small-screen;
+    position: relative;
+    z-index: 1;
+    transition: all 0.2s ease-in-out;
+    &.hidden {
+      padding: 2px;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .logo {
+      width: $site-header-logo-width;
+      height: $site-header-logo-height;
+      // on hover, change color
+      &:hover {
+        color: $color-primary-650;
+      }
+    }
+
+    .primary-navigation {
+      display: none;
+      align-items: center;
+      padding-inline: $size-4;
+    }
+
+    &-content {
+      display: grid;
+      grid-template-columns:
+        auto
+        1fr
+        auto;
+      grid-auto-flow: column;
+      .hamburger-menu {
+        $animation-duration: 300ms;
+        display: inline-block;
+        background: transparent;
+
+        .hamburger {
+          width: 30px;
+          height: 20px;
+          position: relative;
+          -webkit-transform: rotate(0deg);
+          -moz-transform: rotate(0deg);
+          -o-transform: rotate(0deg);
+          transform: rotate(0deg);
+          -webkit-transition: $animation-duration ease-in-out;
+          -moz-transition: $animation-duration ease-in-out;
+          -o-transition: $animation-duration ease-in-out;
+          transition: $animation-duration ease-in-out;
+          cursor: pointer;
+
+          span {
+            display: block;
+            position: absolute;
+            height: 3px;
+            width: 50%;
+            background: $color-neutral-1000;
+            opacity: 1;
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+            -webkit-transition: calc(#{$animation-duration} / 2) ease-in-out;
+            -moz-transition: calc(#{$animation-duration} / 2) ease-in-out;
+            -o-transition: calc(#{$animation-duration} / 2) ease-in-out;
+            transition: calc(#{$animation-duration} / 2) ease-in-out;
+
+            &:nth-child(even) {
+              left: 50%;
+              border-radius: 0 9px 9px 0;
+            }
+
+            &:nth-child(odd) {
+              left:0px;
+              border-radius: 9px 0 0 9px;
+            }
+
+            &:nth-child(1), &:nth-child(2) {
+              top: 0px;
+            }
+
+            &:nth-child(3), &:nth-child(4) {
+              top: 9px;
+            }
+
+            &:nth-child(5), &:nth-child(6) {
+              top: 18px;
+            }
+          }
+
+          &.open {
+            span:nth-child(1), span:nth-child(6) {
+              -webkit-transform: rotate(45deg);
+              -moz-transform: rotate(45deg);
+              -o-transform: rotate(45deg);
+              transform: rotate(45deg);
+            }
+
+            span:nth-child(2), span:nth-child(5) {
+              -webkit-transform: rotate(-45deg);
+              -moz-transform: rotate(-45deg);
+              -o-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+            }
+
+            span:nth-child(1) {
+              left: 3px;
+              top: 9px;
+            }
+
+            span:nth-child(2) {
+              left: calc(50% - 4px);
+              top: 9px;
+            }
+
+            span:nth-child(3) {
+              left: -50%;
+              opacity: 0;
+            }
+
+            span:nth-child(4) {
+              left: 100%;
+              opacity: 0;
+            }
+
+            span:nth-child(5) {
+              left: 3px;
+              top: 17px;
+            }
+
+            span:nth-child(6) {
+              left: calc(50% - 4px);
+              top: 17px;
+            }
+          }
+        }
+
+        .line {
+          transition:
+            y $animation-duration ease-in $animation-duration,
+            rotate $animation-duration ease-in,
+            opacity 0ms $animation-duration;
+          transform-origin: center;
+        }
+
+        &[aria-expanded="true"] {
+          svg {
+            .top {
+              rotate: 45deg;
+              y: 45;
+            }
+
+            .bottom {
+              rotate: -45deg;
+              y: 45;
+            }
+
+            .middle {
+              opacity: 0;
+            }
+
+            .line {
+              transition:
+                y $animation-duration ease-in,
+                rotate $animation-duration ease-in $animation-duration,
+                opacity 0ms $animation-duration;
+            }
+          }
+        }
+      }
+
+      .nav {
+        a:hover {
+          color: $color-primary-650;
+        }
+      }
+
+      .new-order-button {
+        align-self: center;
+      }
+
+      @include mq(small) {
+        justify-content: $site-header-top-info-bar-justification-large-screen;
+
+        //   .user-data {
+        //   justify-self: end;
+        // }
+
+        // .primary-navigation {
+        //   display: flex;
+        // }
+
+
+      }
+
+      @include mq(medium) {
+        &__inner {
+          justify-content: $site-header-justification-large-screen;
+        }
+
+        .primary-navigation {
+          display: flex;
+        }
+
+        .hamburger-menu {
+          display: none;
+        }
+
+        .actions {
+          display: flex;
+        }
+
+        .user-data {
+          display: flex;
+        }
+      }
+    }
+  }
+}

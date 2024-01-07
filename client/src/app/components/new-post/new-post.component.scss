@@ -1,0 +1,88 @@
+@use "../../../sass/abstracts/" as *;
+
+// Create scss file for component
+.wrapper {
+  margin-top: 40px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.form-container {
+  display: grid;
+  gap: 20px;
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1600px;
+  background-color: white;
+  border-radius: 10px;
+
+  @include mq(700px) {
+    grid-template-columns: 1fr auto;
+  }
+
+  @include mq(small) {
+    grid-template-rows: 1fr auto;
+  }
+
+  .form {
+    display: grid;
+    gap: 20px;
+    grid-template-rows: 0.3fr auto;
+    align-items: center;
+    justify-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+    mat-form-field {
+      width: 100%;
+    }
+
+    &__content {
+      ::ng-deep{
+        .mat-mdc-form-field-infix {
+          min-height: 200px;
+          // height: 200px;
+        }
+      }
+      textarea {
+        min-height: 200px;
+        // height: 200px;
+      }
+    }
+
+    &__image {
+      width: 100%;
+      input[type="file"] {
+        display: none;
+      }
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        height: 100%;
+        width: 100%;
+        border: 2px dashed #8b9298;
+        border-radius: 10px;
+        background-color: #e0e0e0;
+        transition: color 0.5s, background-color 0.5s;
+        &:hover {
+          color: white;
+          background-color: #8b9298;
+        }
+      }
+    }
+
+    .submit {
+      transition: color 0.5s, background-color 0.5s;
+      color: white;
+      &[disabled] {
+        // color as disabled
+        color: #8b9298;
+        background-color: #e0e0e0;
+      }
+      background-color: $color-primary-650;
+    }
+  }
+}

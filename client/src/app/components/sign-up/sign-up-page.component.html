@@ -1,14 +1,17 @@
-<div class="container">
-    <div class="img"></div>
-    
-    <div class="middle-container">
-        <div class="sign-up-container">
-            <h2 class="sign-in-text"> Sign Up</h2>
+<div class="img"></div>
+
+<section class="section">
+    <mat-card class="[ card ] [ mx-auto ]">
+        <mat-card-header class="[ card__header ] [ margin-block-end-4 ]">
+            <h1 class="heading-3">Sign Up</h1>
+        </mat-card-header>
+
+        <mat-card-content class="card__content">
             <form [formGroup]="form">
 
             <mat-form-field class="forms" appearance="outline">
-                <mat-label>Username</mat-label>
-                <input matInput placeholder="John Doe" type="text" formControlName="username">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="John Doe" type="text" formControlName="email">
                 <mat-error *ngIf="form.get('username')?.hasError('required')">
                 </mat-error>   
             </mat-form-field>
@@ -29,21 +32,20 @@
                     Passwords must match
                 </mat-error>
             </mat-form-field>
-
-        </form>
-
             <mat-checkbox [disableRipple]="true">
                 <p class="checkbox-text">
                     Stay signed in
                 </p>
             </mat-checkbox>
-
+    
             <button class="btn-sign-in" 
                 [disabled]="!form.valid || disableButton === true" 
                 (click)="signUp()">
                 <mat-icon svgIcon="right-arrow">
                 </mat-icon>
             </button>
-        </div>
-    </div>
-</div>
+        </form>
+
+        </mat-card-content>
+    </mat-card>
+</section>

@@ -1,0 +1,66 @@
+<div class="card">
+    <!-- Create a card like instagram with title description and image -->
+    <div class="card__username">
+      <mat-icon svgIcon="profile"></mat-icon> 
+        <h1 class="username">
+          {{ post.email}}
+        </h1>
+
+        <button
+        *ngIf="delete"
+        class="button btn-delete"
+        data-type="accent"
+        mat-raised-button
+        (click)="deletePost(post.id)"
+        >
+        X
+        </button>
+
+    </div>
+    <mat-divider></mat-divider>
+    <div class="card__image" *ngIf="post.image else noPost">
+        <!-- It is an embded file not a link -->
+        <img 
+        *ngIf="!isUrlImage(post.image)"
+        [src]="post.image"
+        alt="Post Image" />
+        <img
+        *ngIf="isUrlImage(post.image)"
+        [src]="url"
+        alt="loading" />
+    </div>
+
+    <ng-template #noPost>
+        <div class="card__image">
+           <p>
+                No image please upload one
+           </p>
+        </div>
+    </ng-template>
+
+    <mat-divider></mat-divider>
+    <div class="card__actions">
+        <a class="like" (click)="like()"
+        [ngClass]="{
+            'liked': liked
+        }"> 
+            <mat-icon svgIcon="like"></mat-icon>
+        </a>
+        <a class="comment">
+            <mat-icon svgIcon="comment"></mat-icon>
+        </a>
+        <a class="share">
+            <mat-icon svgIcon="share"></mat-icon>
+        </a>
+    </div>
+
+    <div class="card__content">
+        <h1 class="heading-3">
+            {{ post.title }}
+        </h1>
+        <p class="paragraph">
+            <!-- Go on multiple lines -->
+            {{ post.description }}
+        </p>
+    </div>
+</div>

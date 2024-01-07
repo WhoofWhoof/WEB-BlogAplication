@@ -1,14 +1,17 @@
-<div class="container">
-    <div class="img"></div>
+<div class="img"></div>
     
-    <div class="middle-container">
-        <div class="sign-up-container">
-            <h2 class="sign-in-text"> Sign In</h2>
+    <section class="section">
+        <mat-card class="[ card ] [ mx-auto ]">
+            <mat-card-header class="[ card__header ] [ margin-block-end-4 ]">
+                <h1 class="heading-3">Log In</h1>
+            </mat-card-header>
+            
+            <mat-card-content class="card__content">
             <form [formGroup]="form">
 
             <mat-form-field class="forms" appearance="outline">
-                <mat-label>Username</mat-label>
-                <input matInput placeholder="John Doe" type="text" formControlName="username">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="John Doe" type="text" formControlName="email">
                 <mat-error *ngIf="form.get('username')?.hasError('required')">
                 </mat-error>   
             </mat-form-field>
@@ -19,20 +22,20 @@
                 <mat-error *ngIf="form.get('password')?.hasError('required')">
                 </mat-error>
             </mat-form-field>
-        </form>
 
             <mat-checkbox [disableRipple]="true">
-                <p class="checkbox-text">
-                    Stay signed in
-                </p>
+                Stay signed in
             </mat-checkbox>
 
-            <button class="btn-sign-in " 
+            <button class="btn-sign-in"
                 [disabled]="!form.valid || disableButton === true" 
-                (click)="signIn()">
-                <mat-icon svgIcon="right-arrow">
-                </mat-icon>
+                (click)="loggin()"
+                >
+                <mat-icon svgIcon="right-arrow"></mat-icon>
             </button>
+        </form>
+
+
 
             <div class="links">
                 <a class="link"
@@ -45,6 +48,7 @@
                     CREATE ACCOUNT
                 </a>
             </div>
-        </div>
-    </div>
-</div>
+        </mat-card-content>
+
+        </mat-card>
+    </section>

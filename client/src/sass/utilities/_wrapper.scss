@@ -17,3 +17,7 @@
 .wrapper[data-type="full-bleed"] {
   --max-width: 100%;
 }
+
+.wrapper[data-type="medium"] {
+  --max-width: #{$wrapper-max-width-medium};
+}

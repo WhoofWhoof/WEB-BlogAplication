@@ -5,7 +5,6 @@ import { isDevMode } from "@angular/core";
 import { isNil } from "lodash";
 import { from, Observable, Subject, throwError } from "rxjs";
 import { catchError, map, switchMap } from "rxjs/operators";
-import { isPlatformServer } from "@angular/common";
 import { TokenProvider } from "../token-provider";
 
 @Injectable()
@@ -21,7 +20,7 @@ export class ApiProvider {
               @Inject(PLATFORM_ID) platformId) {
 
       if (isDevMode()) {
-        this.url = "http://localhost:4000";
+        this.url = "http://localhost:3000";
       }
   }
 
@@ -38,7 +37,6 @@ export class ApiProvider {
     options.params = params;
     let observable;
     if (this.useAuth) {
-      // console.log("TOKEN", this.token.getToken());
       observable = from(this.token.getToken()).pipe(
       map(token => {
         options.headers = options.headers.append("Authorization",

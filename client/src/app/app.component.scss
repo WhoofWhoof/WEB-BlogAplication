@@ -1,4 +1,15 @@
-.page-content {
-    min-height: 100vh;
-    min-width: 100vh;
+@use "sass/abstracts" as *;
+@import '_variables';
+
+.app {
+  display: grid;
+  grid-template-rows:
+    auto
+    auto;
+  // min-height: 100vh;
+  // min-height: 100dvh;
+  // min-height: 100vh;
+  .display {
+    margin-top: 60px;
   }
+}

@@ -3,6 +3,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
+import { SnackBarDisplay } from 'app/helpers/snack-bar-display';
+import { ApiProvider } from 'app/providers/api';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -14,7 +16,7 @@ export class SignUpPageComponent implements OnInit {
   disableButton: boolean = false;
 
   form = new FormGroup({
-    username: new FormControl("", Validators.required),
+    email: new FormControl("", Validators.required),
     password: new FormControl("", Validators.required),
     confirmPassword: new FormControl("", Validators.required)
   });
@@ -23,8 +25,11 @@ export class SignUpPageComponent implements OnInit {
     private iconRegistry: MatIconRegistry,
     private sanitizer: DomSanitizer,
     private router: Router,
+    private api: ApiProvider,
     ) {
-  
+      this.iconRegistry.addSvgIcon("right-arrow",
+      sanitizer.bypassSecurityTrustResourceUrl(
+          "assets/svg/arrow-right-short.svg"))
   }
 
   subscription: Subscription = new Subscription();
@@ -32,7 +37,6 @@ export class SignUpPageComponent implements OnInit {
   ngOnInit() {
     this.subscription = this.form.controls.password.valueChanges.subscribe(
       password => {
-        console.log(password)
         this.form.controls.confirmPassword.setValidators([
           Validators.required,
           Validators.pattern(password ? password : '')
@@ -43,7 +47,15 @@ export class SignUpPageComponent implements OnInit {
 
   signUp() {
     this.disableButton = true;
-    alert('Sign Up');
-    this.router.navigate(['/login']);
+    this.api.post("auth/sign-up", this.form.value)
+      .subscribe((res: any) => {
+        if (res.success === true) {
+          SnackBarDisplay.getInstance().success(res.message);
+          this.router.navigate(['/login']);
+        } else {
+          SnackBarDisplay.getInstance().error(res.message);
+        }
+        this.disableButton = false;
+      });
   }
 }

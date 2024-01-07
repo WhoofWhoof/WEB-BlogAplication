@@ -1,0 +1,18 @@
+<mat-card class="container mat-typography">
+  <mat-card-content>
+    <nav mat-tab-nav-bar [tabPanel]="tabPanel">
+      <a
+      mat-tab-link
+      *ngFor="let route of routes"
+      [routerLink]="route.link"
+      routerLinkActive #rla="routerLinkActive"
+      [active]="rla.isActive"
+      >
+        {{route.name}}
+      </a>
+    </nav>
+    <mat-tab-nav-panel #tabPanel class="main-container">
+      <router-outlet></router-outlet>
+    </mat-tab-nav-panel>
+  </mat-card-content>
+</mat-card>  

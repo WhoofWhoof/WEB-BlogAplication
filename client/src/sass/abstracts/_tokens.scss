@@ -69,13 +69,12 @@ $section-padding-block: clamp(5rem, 10vh, 6rem);
 $wrapper-min-margin-inline: $size-4;
 $wrapper-max-width: 64rem;
 $wrapper-max-width-narrow: 40rem;
-$wrapper-max-width-wide: 75rem;
+$wrapper-max-width-wide: 100%;
+$wrapper-max-width-medium: 70rem;
 
 // site header
-$site-header-background-color-staging: $color-accent-500;
-$site-header-background-color-production: $color-neutral-000;
 $site-header-color: $color-neutral-900;
-$site-header-padding: $size-2 0;
+$site-header-padding: $size-3 0;
 $site-header-margin: 0;
 $site-header-justification-small-screen: center;
 $site-header-justification-large-screen: space-between;

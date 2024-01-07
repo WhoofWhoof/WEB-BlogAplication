@@ -6,15 +6,18 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "experimentalDecorators": true,
+    "outDir": "dist",
     "baseUrl": ".",
     "paths": {
       "*": [
         "node_modules/*",
         "src/types/*"
       ],
+      "@logger": ["src/util/logger"],
+      "@models/*": ["src/models/*"],
     }
   },
   "include": [
     "src/**/*"
-  ]
+, "knexfile.js", "src/server.ts"  ]
 }

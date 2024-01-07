@@ -1,0 +1,60 @@
+<div class="[ wrapper ]" data-type="medium">
+  <!-- THis is a blog platform and i need forms to make people add the blogs -->
+  <!-- Create forms -->
+  <div class="form-container">
+    <form class="form" [formGroup]="form">
+      <h2 class="heading-2">Create a new post</h2>
+      <mat-form-field class="form__title" appearance="outline">
+        <mat-label>Title</mat-label>
+        <input matInput placeholder="Title" type="text" formControlName="title" />
+        <mat-error *ngIf="form.get('title')?.hasError('required')">
+          Title is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="form__content" appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea
+          matInput
+          placeholder="Description"
+        type="text"
+          formControlName="description"
+        ></textarea>
+        <mat-error *ngIf="form.get('description')?.hasError('required')">
+          Description is required
+        </mat-error>
+      </mat-form-field>
+
+      <div class="form__image">
+        <button mat-raised-button
+          (click)="fileInput.click()">
+            <input id="fileDrop" #fileInput 
+            type="file" 
+            multiple="multiple" 
+            accept="image/jpeg, image/png, image/jpg, image/gif"/>
+           Upload Image or Drag & Drop
+        </button>
+      </div>
+        <button
+        class="submit form__submit"
+        mat-raised-button
+        [disabled]="!form.valid || disableButton === true"
+        (click)="createPost()"
+      >
+        Create new post
+      </button>
+    </form>
+
+    <div class="form_previewer">
+      <app-post-card-component
+        [post]="{
+          id: null,
+          email: user.getName(),
+          title: form.value.title,
+          description: form.value.description,
+          image: imgToDisplay
+        }"
+      >
+      </app-post-card-component>
+    </div>
+</div>
